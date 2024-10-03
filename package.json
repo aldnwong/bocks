@@ -1,0 +1,22 @@
+{
+  "name": "bocks",
+  "type": "module",
+  "version": "0.9.9",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "pages:dev": "wrangler pages dev --compatibility-date=2023-12-18 -- astro dev",
+    "pages:deploy": "astro build && wrangler pages deploy ./dist"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^8.1.0",
+    "astro": "^4.1.2",
+    "npm": "^10.4.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.22.4"
+  }
+}

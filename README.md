@@ -13,4 +13,5 @@ I'm still learning, but I've definitely improved since making this project.
 Feel free to use parts of this project however you please (although I'm not fully sure what you would want to use or if my spaghetti code is worth using 😭).
 
 [View the project here](https://bocks.aldenw.ong)
+
 [Built with Astro](https://astro.build), hosted on [Cloudflare Pages](https://pages.cloudflare.com/)

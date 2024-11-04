@@ -7,11 +7,10 @@ This website would have showcased those items, but for lack of time and privacy 
 This website uses a bunch of photos of the actual box to create an opening animation when you scroll down.
 It would have opened to show a list of the different items that were inside of it.
 
-The code in this project was written before I fully understood HTML/CSS/JS, so it's extremely messy and incoherent at times.
-I'm still learning, but I've definitely improved since making this project.
+The code in this project was originally written before I fully understood HTML/CSS/JS, so it was extremely messy and incoherent at times.
+I've since updated the code to be better organized and look better than it was before.
 
-Feel free to use parts of this project however you please (although I'm not fully sure what you would want to use or if my spaghetti code is worth using 😭).
+Feel free to use parts of this project however you please.
 
 [View the project here](https://bocks.aldenw.ong)
-
 [Built with Astro](https://astro.build), hosted on [Cloudflare Pages](https://pages.cloudflare.com/)

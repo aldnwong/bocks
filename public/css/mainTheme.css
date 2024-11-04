@@ -115,7 +115,7 @@ body {
 
 
 .bocks {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 70vh;
     animation-name: bocksUp;
@@ -129,7 +129,7 @@ body {
 
 .bocks #bocksImg {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     object-fit: contain;
     z-index: -1;
@@ -149,13 +149,8 @@ body {
     padding-top: 5vh;
     margin: auto;
     transform: translateY(-20%);
-    animation-name: arrowAnimation;
-    animation-duration: 1s;
-    animation-delay: 5s;
-    animation-fill-mode: forwards;
     filter: drop-shadow(rgba(255, 255, 255, 0.5) 0px 0px 45px);
     z-index: -1;
-    transition: 0.15s;
 }
 
 /* About: bocks (ab) */

@@ -1,38 +1,38 @@
 window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
+    window.scroll(0, 0);
 }
 
-window.addEventListener("scroll", scrollVar);
-window.addEventListener("resize", scrollVar);
+window.addEventListener("scroll", scrollAnimation);
+window.addEventListener("resize", scrollAnimation);
 
-function scrollVar() {
-    const htmlElement = document.documentElement;
-    const percentOfScreen = htmlElement.scrollTop / htmlElement.clientHeight;
-
-    var bocksDepth = Math.floor(Math.min(percentOfScreen * 80, 23));
-    if (bocksDepth == 0) bocksDepth = 1;
+function scrollAnimation() {
+    var scrollPx = document.documentElement.scrollTop;
+    var topScrollHeightPx = document.getElementById("bocksScroll").scrollHeight
+    var bocksAnimationPercent = Math.min(scrollPx/topScrollHeightPx, 1);
+    var bocksImageNum = Math.floor(bocksAnimationPercent*22)+1
     
     const element =  document.getElementById("bocksImg");
-    element.src = window.location.origin + "/photos/frame-"+bocksDepth+".png"
-    element.style.transformY = "translate("+(bocksDepth-1)*1+"%)";
-    element.style.opacity = 1 - ((bocksDepth-1)/22);
-    element.style.scale = 1+((bocksDepth-1)/22);
+    element.src = window.location.origin + "/photos/frame-"+bocksImageNum+".png"
+    element.style.opacity = 1 - bocksAnimationPercent;
 
     const scrollElement = document.getElementById("arrowImg");
-    scrollElement.style.opacity = 1 - ((bocksDepth-1)/5);
+    scrollElement.style.opacity = 1 - Math.max(bocksAnimationPercent*2, 0);
 
     const titleElement = document.getElementById("fptTitle");
-    titleElement.style.transformY = "translate(-"+bocksDepth*1.5+"%)";
-    titleElement.style.opacity = 1 - ((bocksDepth-1)/22);
+    titleElement.style.transformY = "translate(-"+bocksAnimationPercent*200+"%)";
+    titleElement.style.opacity = 1 - bocksAnimationPercent;
 
-    var r = 25-(25*((bocksDepth-1)/22))
-    var g = 19-(19*((bocksDepth-1)/22))
-    var b = 75-(75*((bocksDepth-1)/22))
+    var r = 25-(25*bocksAnimationPercent)
+    var g = 19-(19*bocksAnimationPercent)
+    var b = 75-(75*bocksAnimationPercent)
 
-    htmlElement.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    document.documentElement.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 
-    const aboutSections = document.getElementsByClassName("about");
-    for (var i = 0; i < aboutSections.length; i++) {
-        aboutSections[i].style.opacity = ((bocksDepth-1)/22);
+    let aboutSections = document.getElementsByClassName("about");
+    for (let i = 0; i < aboutSections.length; i++) {
+        if (bocksAnimationPercent>0.75)
+            aboutSections[i].style.opacity = (bocksAnimationPercent*2)-1;
+        else
+            aboutSections[i].style.opacity = 0;
     }
 }

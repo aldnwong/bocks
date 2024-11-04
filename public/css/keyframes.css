@@ -19,30 +19,16 @@
     animation-fill-mode: backwards;
 }
 
-html {
-    animation-name: fadeBackgroundColor;
-    animation-duration: 2s;
-    animation-fill-mode: backwards;
-}
-
 body {
     animation-name: lockScroll;
     animation-delay: 4s;
     animation-fill-mode: both;
 }
 
-@keyframes fadeBackgroundColor {
-    from {background-color: black}
-    to {background-color: rgb(24, 19, 75)}
-}
-
-@keyframes lockScroll {
-    from {
-        overflow: hidden;
-    }
-    to {
-        overflow: auto;
-    }
+html {
+    animation-name: fadeBackgroundColor;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
 }
 
 @keyframes fadeIn {
@@ -83,13 +69,16 @@ body {
     }
 }
 
-@keyframes bocksUp {
+@keyframes lockScroll {
     from {
-        opacity: 0;
-        padding-top: 5vh;
+        overflow: hidden;
     }
     to {
-        opacity: 1;
-        padding-top: 0vh;
+        overflow: auto;
     }
+}
+
+@keyframes fadeBackgroundColor {
+    from {background-color: black}
+    to {background-color: rgb(24, 19, 75)}
 }

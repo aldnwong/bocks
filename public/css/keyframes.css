@@ -1,0 +1,59 @@
+@keyframes fadeToPurple {
+    from {background-color: black;}
+    to {background-color: var(--backgroundColor);}
+}
+
+@keyframes lockScroll {
+    from {
+        height: 100%;
+        overflow: hidden;
+    }
+    to {
+        height: auto;
+        overflow: auto;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        font-size: 4em;
+        color: rgb(0, 0, 0);
+        filter: drop-shadow(rgb(0, 0, 0) 0px 0px 45px);
+    }
+    90% {
+        color: var(--titleColor);
+    }
+    100% {
+        filter: drop-shadow(var(--titleSecondaryColor) 0px 0px 45px);
+    }
+}
+
+@keyframes textShift {
+    from {
+        padding-top: 35vh;
+    }
+    to {
+        padding-top: 20vh;
+    }
+}
+
+
+@keyframes bocksUp {
+    from {
+        opacity: 0;
+        padding-top: 5vh;
+    }
+    to {
+        opacity: 1;
+        padding-top: 0vh;
+    }
+}
+
+@keyframes arrowAnimation {
+    0%, 50%, 100% {
+        transform: translateY(-20%);
+    }
+    25%, 75% {
+        transform: translateY(-10%);
+    }
+}

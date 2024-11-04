@@ -1,63 +1,39 @@
-/*
-
-    WARNING: This CSS file was written before I fully understood CSS and formatting.
-    Therefore, this file is messy and I'm not even fully sure what all of it does to be honest.
-
-*/
-
 /* Variables */
 
 :root {
-    --htmlBg: rgb(24, 19, 75);
-    --fptTitle: #978bff;
-    --fptTitleShadow: #c0baff;
-    --fptHighlighted: #998FC3;
-}
-
-/* Font import */
-
-@font-face {
-    font-family: ComicSans;
-    src: url("../fonts/ComicSans.ttf");
-}
-@font-face {
-    font-family: Consolas;
-    src: url("../fonts/Consolas.ttf");
+    --backgroundColor: rgb(24, 19, 75);
+    --titleColor: #978bff;
+    --titleSecondaryColor: #998FC3;
+    --shadowColor: #c0baff;
 }
 
 /* General website element styling */
 
-.title {
+.title, .text {
     font-family: 'Poppins';
-    font-size: 4em;
-    font-weight: 700;
     height: 100%;
     width: 100%;
 }
 
+.title {
+    font-size: 4em;
+    font-weight: 700;
+}
+
 .text {
-    font-family: 'Poppins';
     font-size: 1.5em;
     font-weight: 500;
-    height: 100%;
-    width: 100%;
 }
 
 @media only screen and (max-width: 700px) {
     .title {
-        font-family: 'Poppins';
         font-size: 2em;
         font-weight: 700;
-        height: 100%;
-        width: 100%;
     }
 
     .text {
-        font-family: 'Poppins';
         font-size: 1.25em;
         font-weight: 500;
-        height: 100%;
-        width: 100%;
     }
 }
 
@@ -66,13 +42,10 @@
     transition: 0.15s;
 }
 
-@keyframes fadeToPurple {
-    from {background-color: black;}
-    to {background-color: var(--htmlBg);}
-}
+
 
 html {
-    background-color: var(--htmlBg);
+    background-color: var(--backgroundColor);
     animation-name: fadeToPurple;
     animation-duration: 2s;
     -ms-overflow-style: none; 
@@ -84,16 +57,7 @@ html::-webkit-scrollbar {
     display: none; 
 }
 
-@keyframes lockScroll {
-    from {
-        height: 100%;
-        overflow: hidden;
-    }
-    to {
-        height: auto;
-        overflow: auto;
-    }
-}
+
 
 body {
     height: 100%;
@@ -109,35 +73,14 @@ body {
     height: 5vh;
 }
 
-@keyframes fadeIn {
-    0% {
-        font-size: 4em;
-        color: rgb(0, 0, 0);
-        filter: drop-shadow(rgb(0, 0, 0) 0px 0px 45px);
-    }
-    90% {
-        color: var(--fptTitle);
-    }
-    100% {
-        filter: drop-shadow(var(--fptTitleShadow) 0px 0px 45px);
-    }
-}
 
-@keyframes textShift {
-    from {
-        padding-top: 35vh;
-    }
-    to {
-        padding-top: 20vh;
-    }
-}
 
 .start .title {
     font-size: 5em;
     text-align: center;
     padding-top: 35vh;
-    color: var(--fptTitle);
-    filter: drop-shadow(var(--fptTitleShadow) 0px 0px 45px);
+    color: var(--titleColor);
+    filter: drop-shadow(var(--shadowColor) 0px 0px 45px);
     animation-name: fadeIn, textShift;
     animation-duration: 1s, 1s;
     animation-delay: 0s, 3.5s;
@@ -150,8 +93,8 @@ body {
         font-size: 2.5em;
         text-align: center;
         padding-top: 20vh;
-        color: var(--fptTitle);
-        filter: drop-shadow(var(--fptTitleShadow) 0px 0px 45px);
+        color: var(--titleColor);
+        filter: drop-shadow(var(--shadowColor) 0px 0px 45px);
         animation-name: fadeIn;
         animation-duration: 1s;
         animation-delay: 0s;
@@ -164,25 +107,15 @@ body {
     font-family: 'ComicSans';
     font-size: 1.1em;
     font-weight: 700;
-    color: var(--fptHighlighted);
+    color: var(--titleSecondaryColor);
     line-height: 0.8;
 }
 
 /* Dynamic moving bocks */
 
-@keyframes bocksUp {
-    from {
-        opacity: 0;
-        padding-top: 5vh;
-    }
-    to {
-        opacity: 1;
-        padding-top: 0vh;
-    }
-}
 
 .bocks {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 70vh;
     animation-name: bocksUp;
@@ -207,20 +140,7 @@ body {
 
 /* Scroll indicator */
 
-@keyframes animateEntrance {
-    0% {
-        transform: translateY(-20%);
-    }
-    33% {
-        transform: translateY(0%);
-    }
-    66% {
-        transform: translateY(-10%);
-    }
-    100% {
-        transform: translateY(5%);
-    }
-}
+
 
 #arrowImg {
     width: 3em;
@@ -229,19 +149,13 @@ body {
     padding-top: 5vh;
     margin: auto;
     transform: translateY(-20%);
-    animation-name: animateEntrance;
-    animation-duration: .6s;
+    animation-name: arrowAnimation;
+    animation-duration: 1s;
     animation-delay: 5s;
     animation-fill-mode: forwards;
     filter: drop-shadow(rgba(255, 255, 255, 0.5) 0px 0px 45px);
     z-index: -1;
     transition: 0.15s;
-}
-
-/* About container */
-
-.mainContain {
-    margin-top: -25vh;
 }
 
 /* About: bocks (ab) */
@@ -251,10 +165,10 @@ body {
     margin: auto;
 }
 
-#abTitle {
-    color: var(--fptTitle);
+#abTitle, #abText {
+    color: var(--titleColor);
 }
 
-#abText {
-    color: var(--fptTitle);
+.spacer {
+    width: 100%
 }

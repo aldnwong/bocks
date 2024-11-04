@@ -12,4 +12,4 @@ I've since updated the code to be better organized and look better than it was b
 
 Feel free to use parts of this project however you please.
 
-[View the project here](https://bocks.aldenw.ong)
+[View the project here](https://bocks.aldenw.ong).

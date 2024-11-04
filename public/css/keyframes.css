@@ -20,9 +20,9 @@
 }
 
 html {
-    background-color: var(--backgroundColor);
-    animation-name: fadeToPurple;
+    animation-name: fadeBackgroundColor;
     animation-duration: 2s;
+    animation-fill-mode: backwards;
 }
 
 body {
@@ -31,9 +31,9 @@ body {
     animation-fill-mode: both;
 }
 
-@keyframes fadeToPurple {
+@keyframes fadeBackgroundColor {
     from {background-color: black}
-    to {background-color: var(--backgroundColor)}
+    to {background-color: rgb(24, 19, 75)}
 }
 
 @keyframes lockScroll {

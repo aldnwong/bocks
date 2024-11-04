@@ -10,6 +10,4 @@ It would have opened to show a list of the different items that were inside of i
 The code in this project was originally written before I fully understood HTML/CSS/JS, so it was extremely messy and incoherent at times.
 I've since updated the code to be better organized and look better than it was before.
 
-Feel free to use parts of this project however you please.
-
 [View the project here](https://bocks.aldenw.ong).

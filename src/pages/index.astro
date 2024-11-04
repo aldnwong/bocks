@@ -13,37 +13,38 @@
 		<link rel="preload" href="fonts/ComicSans.ttf" as="font" type="font/tff" crossorigin>
 		<link rel="preload" href="fonts/Consolas.ttf" as="font" type="font/tff" crossorigin>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900">
-
 		<link rel="stylesheet" href="css/cssReset.css">
 		<link rel="stylesheet" href="css/mainTheme.css">
+		<link rel="stylesheet" href="css/mobileTheme.css">
 		<link rel="stylesheet" href="css/keyframes.css">
-		<link rel="stylesheet" href="css/fonts.css">
+		<link rel="stylesheet" href="css/variables.css">
 
 		<script src="../scripts/preloadImages.js" />
 		<script src="../scripts/scrollAnimations.js" />
 		<script src="../scripts/titleAnimation.js" />
 	</head>
+
 	<body>
-		<div class="start">
-			<h1 class="title" id="fptTitle">senior box</h1>
-		</div>
-		<div class="bocks" id="bocksScroll">
+		<div id="bocksScroll">
+			<h1 id="title">senior box</h1>
+			<div class="spacer" style="height:60vh;" />
 			<img id="bocksImg" src="photos/frame-1.png" draggable="false">
 			<img id="arrowImg" src="photos/arrowDown.png" draggable="false">
 		</div>
-		<div class="about mainContain" style="">
-			<div class="aboutBocks" id="abDiv">
-				<h1 class="title" id="abTitle">What is it?</h1>
-				<p class="text" id="abText">
+		<div class="about">
+			<div class="spacer" id="spacer1" style="height:10vh;" />
+			<div>
+				<h1>What is it?</h1>
+				<p>
 					My senior box (or "bocks") is a box I made with other friends, with the idea to fill it with different items from throughout the year.
 					Each of them have their own stories, relating to different memories and activities that I enjoyed.
 					<br><br>
 					This website would have showcased those items, but for lack of time and privacy reasons, I have decided to scrap this project.
 					<br><br>
-					<a href="https://github.com/aldnwong/bocks" style="text-decoration: underline; color: #978bff">View the GitHub repo here.</a>
+					<a href="https://github.com/aldnwong/bocks">View the GitHub repo here.</a>
 				</p>
 			</div>
-			<div class="spacer" style="height:700vh;" />
 		</div>
+		<div class="spacer" style="height:75vh;" />
 	</body>
 </html>

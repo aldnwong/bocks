@@ -1,7 +1,15 @@
+:root {
+    --backgroundColor: rgb(24, 19, 75);
+    --titleColor: #978bff;
+    --titleSecondaryColor: #998FC3;
+    --shadowColor: #c0baff;
+}
+
 @font-face {
     font-family: ComicSans;
     src: url("../fonts/ComicSans.ttf");
 }
+
 @font-face {
     font-family: Consolas;
     src: url("../fonts/Consolas.ttf");

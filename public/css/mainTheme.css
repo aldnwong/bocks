@@ -1,106 +1,12 @@
-/* Variables */
-
-:root {
-    --backgroundColor: rgb(24, 19, 75);
-    --titleColor: #978bff;
-    --titleSecondaryColor: #998FC3;
-    --shadowColor: #c0baff;
-}
-
-/* General website element styling */
-
-.title, .text {
+#title {
+    font-size: 5em;
+    font-weight: 700;
     font-family: 'Poppins';
     height: 100%;
     width: 100%;
-}
-
-.title {
-    font-size: 4em;
-    font-weight: 700;
-}
-
-.text {
-    font-size: 1.5em;
-    font-weight: 500;
-}
-
-@media only screen and (max-width: 700px) {
-    .title {
-        font-size: 2em;
-        font-weight: 700;
-    }
-
-    .text {
-        font-size: 1.25em;
-        font-weight: 500;
-    }
-}
-
-.about {
-    opacity: 0;
-    transition: 0.15s;
-}
-
-
-
-html {
-    background-color: var(--backgroundColor);
-    animation-name: fadeToPurple;
-    animation-duration: 2s;
-    -ms-overflow-style: none; 
-    scrollbar-width: none;  
-    scroll-behavior: smooth;
-}
-
-html::-webkit-scrollbar { 
-    display: none; 
-}
-
-
-
-body {
-    height: 100%;
-    overflow: hidden;
-    animation-name: lockScroll;
-    animation-delay: 4s;
-    animation-fill-mode: both;
-    transition: 0.5s;
-}
-
-.start {
-    width: 100%;
-    height: 5vh;
-}
-
-
-
-.start .title {
-    font-size: 5em;
-    text-align: center;
     padding-top: 35vh;
+    text-align: center;
     color: var(--titleColor);
-    filter: drop-shadow(var(--shadowColor) 0px 0px 45px);
-    animation-name: fadeIn, textShift;
-    animation-duration: 1s, 1s;
-    animation-delay: 0s, 3.5s;
-    animation-fill-mode: forwards;
-    transition: 0.15s;
-}
-
-@media only screen and (max-width: 700px) {
-    .start .title { 
-        font-size: 2.5em;
-        text-align: center;
-        padding-top: 20vh;
-        color: var(--titleColor);
-        filter: drop-shadow(var(--shadowColor) 0px 0px 45px);
-        animation-name: fadeIn;
-        animation-duration: 1s;
-        animation-delay: 0s;
-        animation-fill-mode: forwards;
-        transition: 0.15s;
-    }
 }
 
 #highlighted {
@@ -111,59 +17,63 @@ body {
     line-height: 0.8;
 }
 
-/* Dynamic moving bocks */
-
-
-.bocks {
-    position: relative;
-    width: 100%;
-    height: 70vh;
-    animation-name: bocksUp;
-    animation-delay: 3.5s;
-    animation-fill-mode: both;
-    animation-duration: 1.5s;
-    z-index: -1;
-    overflow-x: clip;
-    overflow-y: visible;
-}
-
-.bocks #bocksImg {
-    position: relative;
+#bocksImg {
+    position: fixed;
+    top: -10vh;
+    left: 0;
     width: 100vw;
-    height: 100%;
+    height: 90vh;
     object-fit: contain;
-    z-index: -1;
     filter: drop-shadow(rgba(255, 255, 255, 0.5) 0px 0px 45px);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    z-index: -1;
 }
-
-/* Scroll indicator */
-
-
 
 #arrowImg {
     width: 3em;
     height: 3em;
     display: block;
-    padding-top: 5vh;
     margin: auto;
     transform: translateY(-20%);
-    filter: drop-shadow(rgba(255, 255, 255, 0.5) 0px 0px 45px);
     z-index: -1;
 }
 
-/* About: bocks (ab) */
+.about {
+    opacity: 0;
+    transition: 0.15s;
 
-#abDiv {
-    width: 80%;
-    margin: auto;
+    div {
+        width: 80%;
+        margin: auto;
+    }
+
+    h1, p, a {
+        color: var(--titleColor);
+        font-family: 'Poppins';
+        height: 100%;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 4em;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 2em;
+        font-weight: 300;
+    }
+
+    a {
+        text-decoration: underline; 
+    }
 }
 
-#abTitle, #abText {
-    color: var(--titleColor);
+html {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+    scroll-behavior: smooth;
 }
 
-.spacer {
-    width: 100%
+html::-webkit-scrollbar { 
+    display: none; 
 }

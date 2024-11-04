@@ -1,9 +1,15 @@
+var locked = true;
+setTimeout(unlock, 4000)
+
 window.onbeforeunload = function () {
     window.scroll(0, 0);
 }
 
-window.addEventListener("scroll", scrollAnimation);
-window.addEventListener("resize", scrollAnimation);
+function unlock() {
+    locked = false
+    window.addEventListener("scroll", scrollAnimation);
+    window.addEventListener("resize", scrollAnimation);
+}
 
 function scrollAnimation() {
     var scrollPx = document.documentElement.scrollTop;
@@ -14,11 +20,12 @@ function scrollAnimation() {
     const element =  document.getElementById("bocksImg");
     element.src = window.location.origin + "/photos/frame-"+bocksImageNum+".png"
     element.style.opacity = 1 - bocksAnimationPercent;
+    element.style.scale = 1 + bocksAnimationPercent;
 
     const scrollElement = document.getElementById("arrowImg");
-    scrollElement.style.opacity = 1 - Math.max(bocksAnimationPercent*2, 0);
+    scrollElement.style.opacity = 1 - Math.max(bocksAnimationPercent*10, 0);
 
-    const titleElement = document.getElementById("fptTitle");
+    const titleElement = document.getElementById("title");
     titleElement.style.transformY = "translate(-"+bocksAnimationPercent*200+"%)";
     titleElement.style.opacity = 1 - bocksAnimationPercent;
 

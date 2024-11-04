@@ -1,30 +1,67 @@
+#title {
+    animation-name: scaleIn, fadeIn, textShift;
+    animation-duration: 1s, 1s, 1s;
+    animation-delay: 0s, 0s, 3.5s;
+    animation-fill-mode: forwards;
+}
+
+#bocksImg {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 3.5s;
+    animation-fill-mode: backwards;
+}
+
+#arrowImg {
+    animation-name: fadeIn, nudge;
+    animation-duration: 1s, 1s;
+    animation-delay: 4s, 5s;
+    animation-fill-mode: backwards;
+}
+
+html {
+    background-color: var(--backgroundColor);
+    animation-name: fadeToPurple;
+    animation-duration: 2s;
+}
+
+body {
+    animation-name: lockScroll;
+    animation-delay: 4s;
+    animation-fill-mode: both;
+}
+
 @keyframes fadeToPurple {
-    from {background-color: black;}
-    to {background-color: var(--backgroundColor);}
+    from {background-color: black}
+    to {background-color: var(--backgroundColor)}
 }
 
 @keyframes lockScroll {
     from {
-        height: 100%;
         overflow: hidden;
     }
     to {
-        height: auto;
         overflow: auto;
     }
 }
 
 @keyframes fadeIn {
-    0% {
-        font-size: 4em;
-        color: rgb(0, 0, 0);
-        filter: drop-shadow(rgb(0, 0, 0) 0px 0px 45px);
+    from {
+        opacity: 0;
     }
-    90% {
-        color: var(--titleColor);
+    to {
+        opacity: 1;
     }
-    100% {
-        filter: drop-shadow(var(--titleSecondaryColor) 0px 0px 45px);
+}
+
+@keyframes scaleIn {
+    from {
+        scale: 0.8;
+        transform: translateY(10%);
+    }
+    to {
+        scale: 1;
+        transform: translateY(0%);
     }
 }
 
@@ -33,10 +70,18 @@
         padding-top: 35vh;
     }
     to {
-        padding-top: 20vh;
+        padding-top: 15vh;
     }
 }
 
+@keyframes nudge {
+    0%, 100% {
+        transform: translateY(-20%);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+}
 
 @keyframes bocksUp {
     from {
